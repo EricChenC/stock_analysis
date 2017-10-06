@@ -1,0 +1,1 @@
+pyuic5 stock_analysis.ui -o ui_stock_analysis.py
