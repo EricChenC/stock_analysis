@@ -574,8 +574,53 @@
      <height>21</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuParament_List">
+    <property name="title">
+     <string>Parameters</string>
+    </property>
+    <addaction name="actionPE"/>
+    <addaction name="actionPB"/>
+    <addaction name="actionTime"/>
+    <addaction name="actiontotal"/>
+   </widget>
+   <addaction name="menuParament_List"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionPE">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>PE</string>
+   </property>
+  </action>
+  <action name="actionPB">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>PB</string>
+   </property>
+  </action>
+  <action name="actionTime">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Time</string>
+   </property>
+  </action>
+  <action name="actiontotal">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>total</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
