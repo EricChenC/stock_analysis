@@ -57,7 +57,7 @@
        </layout>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="2,6">
+       <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="2">
         <item>
          <widget class="QGroupBox" name="groupBox">
           <property name="title">
@@ -77,43 +77,6 @@
               </widget>
              </item>
             </layout>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item>
-         <widget class="QGroupBox" name="groupBox_2">
-          <property name="title">
-           <string>apple(11011)</string>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout" stretch="6">
-           <item>
-            <widget class="QTabWidget" name="tabWidget">
-             <property name="font">
-              <font>
-               <weight>50</weight>
-               <bold>false</bold>
-              </font>
-             </property>
-             <property name="currentIndex">
-              <number>0</number>
-             </property>
-             <widget class="QWidget" name="tab">
-              <attribute name="title">
-               <string>day</string>
-              </attribute>
-             </widget>
-             <widget class="QWidget" name="tab_2">
-              <attribute name="title">
-               <string>month</string>
-              </attribute>
-             </widget>
-             <widget class="QWidget" name="tab_3">
-              <attribute name="title">
-               <string>year</string>
-              </attribute>
-             </widget>
-            </widget>
            </item>
           </layout>
          </widget>
