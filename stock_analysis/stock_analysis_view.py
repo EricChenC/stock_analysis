@@ -2,8 +2,10 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QHeaderView
 
 from ui_stock_analysis import Ui_MainWindow
+from stock_item import StockItem
 
-class stock_analysis_view(object):
+
+class StockAnalysisView(object):
     def __init__(self):
         self.MainWindow = QtWidgets.QMainWindow()
         self.ui = Ui_MainWindow()
@@ -33,14 +35,15 @@ class stock_analysis_view(object):
             row_count = 1
 
         self.ui.SearchTableWidget.setRowCount(row_count)
+        for row in range(int(row_count)):
+            self.ui.SearchTableWidget.setRowHeight(row, 50)
             
         index = 0
         for row in range(int(row_count)):
             for column in range(self.column_count):
-                item = QtWidgets.QTableWidgetItem()
-                item.setText(action_name_list[index])
-
-                self.ui.SearchTableWidget.setItem(row,column,item)
+                stock_item = StockItem(action_name_list[index], 10, "billion")
+                
+                self.ui.SearchTableWidget.setCellWidget(row,column,stock_item.get_item())
                 index += 1
 
     def start_search(self):

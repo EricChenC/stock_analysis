@@ -27,6 +27,9 @@
           <property name="frameShadow">
            <enum>QFrame::Sunken</enum>
           </property>
+          <property name="selectionMode">
+           <enum>QAbstractItemView::NoSelection</enum>
+          </property>
           <property name="gridStyle">
            <enum>Qt::NoPen</enum>
           </property>
@@ -139,6 +142,23 @@
     <addaction name="actionTime"/>
     <addaction name="actiontotal"/>
     <addaction name="actionPrice"/>
+    <addaction name="actionindustry"/>
+    <addaction name="actionarea"/>
+    <addaction name="actionoutstanding"/>
+    <addaction name="actiontotalAssets"/>
+    <addaction name="actionliquidAssets"/>
+    <addaction name="actionfixedAssets"/>
+    <addaction name="actionreserved"/>
+    <addaction name="actionreservedPerShare"/>
+    <addaction name="actionesp"/>
+    <addaction name="actiontimeToMarket"/>
+    <addaction name="actionundp"/>
+    <addaction name="actionperundp"/>
+    <addaction name="actionrev"/>
+    <addaction name="actionprofit"/>
+    <addaction name="actiongpr"/>
+    <addaction name="actionnpr"/>
+    <addaction name="actionholders"/>
    </widget>
    <addaction name="menuParament_List"/>
   </widget>
@@ -184,12 +204,151 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>total</string>
+    <string>totals</string>
    </property>
   </action>
   <action name="actionPrice">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>Price</string>
+   </property>
+  </action>
+  <action name="actionindustry">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>industry</string>
+   </property>
+  </action>
+  <action name="actionarea">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>area</string>
+   </property>
+  </action>
+  <action name="actionoutstanding">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>outstanding</string>
+   </property>
+  </action>
+  <action name="actiontotalAssets">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>totalAssets</string>
+   </property>
+  </action>
+  <action name="actionliquidAssets">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>liquidAssets</string>
+   </property>
+  </action>
+  <action name="actionfixedAssets">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>fixedAssets</string>
+   </property>
+  </action>
+  <action name="actionreserved">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>reserved</string>
+   </property>
+  </action>
+  <action name="actionreservedPerShare">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>reservedPerShare</string>
+   </property>
+  </action>
+  <action name="actionesp">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>esp</string>
+   </property>
+  </action>
+  <action name="actiontimeToMarket">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>timeToMarket</string>
+   </property>
+  </action>
+  <action name="actionundp">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>undp</string>
+   </property>
+  </action>
+  <action name="actionperundp">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>perundp</string>
+   </property>
+  </action>
+  <action name="actionrev">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>rev</string>
+   </property>
+  </action>
+  <action name="actionprofit">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>profit</string>
+   </property>
+  </action>
+  <action name="actiongpr">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>gpr</string>
+   </property>
+  </action>
+  <action name="actionnpr">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>npr</string>
+   </property>
+  </action>
+  <action name="actionholders">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>holders</string>
    </property>
   </action>
  </widget>
