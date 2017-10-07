@@ -1,7 +1,7 @@
 import tushare as ts
 import pandas as pd
 
-class StockAnalysisModel(object):
+class stock_analysis_model(object):
     def __init__(self):
         print('model init')
 
