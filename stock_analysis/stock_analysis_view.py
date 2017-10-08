@@ -21,7 +21,6 @@ class StockAnalysisView(QObject):
         self.ui.splitter.setStretchFactor(1, 1)
         self.ui.splitter.setStretchFactor(2, 400)
 
-
     def init_ui(self):
         self.column_count = 4
 
@@ -53,11 +52,19 @@ class StockAnalysisView(QObject):
         for row in range(int(row_count)):
             self.ui.SearchTableWidget.setRowHeight(row, 50)
             
+        self.name_value_dic = {}
+
         index = 0
         for row in range(int(row_count)):
             for column in range(self.column_count):
-                stock_item = StockItem(action_name_list[index], 10, "billion")
+                value = 10.0
+
+                stock_item = StockItem(action_name_list[index], value)
+                if(action_name_list[index] == 'totalAssets'):
+                    value = 10000.0
+                    stock_item = StockItem(action_name_list[index], value, "billion")
                 
+                self.name_value_dic[action_name_list[index]] = str(value)
                 self.ui.SearchTableWidget.setCellWidget(row,column,stock_item.get_item())
                 index += 1
 
@@ -77,4 +84,25 @@ class StockAnalysisView(QObject):
                 name_list.append(action_list[index].text())
 
         return name_list
+
+    def set_stock_table_widget_row_column(self, row, column):
+        self.ui.StockTableWidget.clear()
+
+        self.ui.StockTableWidget.setRowCount(row)
+        self.ui.StockTableWidget.setColumnCount(column)
+
+    def set_column_head_name(self, column, name):
+        item = QtWidgets.QTableWidgetItem(name)
+
+        self.ui.StockTableWidget.setHorizontalHeaderItem(column, item)
+
+    def set_column_data_list(self, column, data_list):
+        for index in range(len(data_list)):
+            item = QtWidgets.QTableWidgetItem(data_list[index])
+            self.ui.StockTableWidget.setItem(index, column, item)
+
+    def get_name_value_dic(self):
+        return self.name_value_dic
+
+
 

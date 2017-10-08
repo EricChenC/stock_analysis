@@ -83,10 +83,13 @@
          <widget class="QLineEdit" name="FilterLineEdit"/>
         </item>
         <item>
-         <widget class="QListWidget" name="StockListWidget">
-          <property name="modelColumn">
-           <number>0</number>
-          </property>
+         <widget class="QTableWidget" name="StockTableWidget">
+          <attribute name="horizontalHeaderVisible">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="verticalHeaderVisible">
+           <bool>false</bool>
+          </attribute>
          </widget>
         </item>
        </layout>
@@ -182,7 +185,7 @@
     <bool>true</bool>
    </property>
    <property name="checked">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
    <property name="text">
     <string>totals</string>
@@ -234,6 +237,9 @@
   </action>
   <action name="actiontotalAssets">
    <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
     <bool>true</bool>
    </property>
    <property name="text">
