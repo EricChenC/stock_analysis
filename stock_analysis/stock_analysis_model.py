@@ -7,6 +7,11 @@ class StockAnalysisModel(object):
         self.all_stock_list = ts.get_stock_basics()
 
         self.index_list = []
+        self.init_index_list()
+
+    def init_index_list(self):
+        self.index_list.clear()
+
         for x in range(len(self.all_stock_list)):
             self.index_list.append(x)
 

@@ -64,8 +64,10 @@ class StockAnalysisView(QObject):
                     value = 10000.0
                     stock_item = StockItem(action_name_list[index], value, "billion")
                 
+                stock_item.change_signal.connect(self.search_item_update)
+
                 self.name_value_dic[action_name_list[index]] = str(value)
-                self.ui.SearchTableWidget.setCellWidget(row,column,stock_item.get_item())
+                self.ui.SearchTableWidget.setCellWidget(row,column,stock_item)
                 index += 1
 
                 if(index == len(action_name_list)):
@@ -104,5 +106,9 @@ class StockAnalysisView(QObject):
     def get_name_value_dic(self):
         return self.name_value_dic
 
+    def search_item_update(self, stock_item):
+        name = stock_item.get_item_name()
+        value = stock_item.get_item_value()
 
+        self.name_value_dic[name] = str(value)
 

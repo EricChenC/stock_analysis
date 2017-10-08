@@ -1,12 +1,18 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtCore import pyqtSignal
+from PyQt5.QtCore import QObject
+from PyQt5.QtWidgets import QLineEdit
+from PyQt5.QtWidgets import QLabel
+from PyQt5.QtWidgets import QWidget
 
-class StockItem(object):
+class StockItem(QWidget):
+    change_signal = pyqtSignal(QWidget)
+
     def __init__(self, name, value, size_str = ''):
-        self.item_widget = QtWidgets.QWidget()
-
-        self.name_label = QtWidgets.QLabel(name)
-        self.value_lineEdit = QtWidgets.QLineEdit()
-        self.size_label = QtWidgets.QLabel(size_str)
+        QWidget.__init__(self)
+        self.name_label = QLabel(name)
+        self.value_lineEdit = QLineEdit()
+        self.size_label = QLabel(size_str)
 
         self.value_lineEdit.setText(str(value))
 
@@ -15,10 +21,9 @@ class StockItem(object):
         item_horizon_layout.addWidget(self.value_lineEdit, 4)
         item_horizon_layout.addWidget(self.size_label, 2)
 
-        self.item_widget.setLayout(item_horizon_layout)
+        self.setLayout(item_horizon_layout)
 
-    def get_item(self):
-        return self.item_widget
+        self.value_lineEdit.textChanged.connect(self.content_update)
 
     def get_item_name(self):
         return self.name_label.text()
@@ -27,8 +32,11 @@ class StockItem(object):
         self.name_label.setText(name)
 
     def get_item_value(self):
-        return int(self.value_lineEdit.text())
+        return self.value_lineEdit.text()
 
     def set_item_value(self, value):
         self.value_lineEdit.setText(str(value))
+
+    def content_update(self):
+        self.change_signal.emit(self)
 
