@@ -14,11 +14,23 @@
    <string>stock analysis</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout_5">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
-     <layout class="QVBoxLayout" name="verticalLayout_4" stretch="2,8">
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout" stretch="10,2">
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <widget class="QGroupBox" name="groupBox_2">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout" stretch="5,1">
         <item>
          <widget class="QTableWidget" name="SearchTableWidget">
           <property name="frameShape">
@@ -55,35 +67,31 @@
          </widget>
         </item>
        </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="2">
+      </widget>
+      <widget class="QGroupBox" name="groupBox">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
         <item>
-         <widget class="QGroupBox" name="groupBox">
-          <property name="title">
-           <string/>
+         <widget class="QLineEdit" name="FilterLineEdit"/>
+        </item>
+        <item>
+         <widget class="QListWidget" name="StockListWidget">
+          <property name="modelColumn">
+           <number>0</number>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_3">
-           <item>
-            <layout class="QVBoxLayout" name="verticalLayout_2">
-             <item>
-              <widget class="QLineEdit" name="FilterLineEdit"/>
-             </item>
-             <item>
-              <widget class="QListWidget" name="StockListWidget">
-               <property name="modelColumn">
-                <number>0</number>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-          </layout>
          </widget>
         </item>
        </layout>
-      </item>
-     </layout>
+      </widget>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -100,20 +108,21 @@
     <property name="title">
      <string>Add</string>
     </property>
-    <addaction name="actionPE"/>
-    <addaction name="actionPB"/>
-    <addaction name="actionTime"/>
-    <addaction name="actiontotal"/>
-    <addaction name="actionPrice"/>
+    <addaction name="actioncode"/>
+    <addaction name="actionname"/>
     <addaction name="actionindustry"/>
     <addaction name="actionarea"/>
+    <addaction name="actionPE"/>
     <addaction name="actionoutstanding"/>
+    <addaction name="actiontotal"/>
     <addaction name="actiontotalAssets"/>
     <addaction name="actionliquidAssets"/>
     <addaction name="actionfixedAssets"/>
     <addaction name="actionreserved"/>
     <addaction name="actionreservedPerShare"/>
-    <addaction name="actionesp"/>
+    <addaction name="actioneps"/>
+    <addaction name="actionbvps"/>
+    <addaction name="actionPB"/>
     <addaction name="actiontimeToMarket"/>
     <addaction name="actionundp"/>
     <addaction name="actionperundp"/>
@@ -134,7 +143,13 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>PE</string>
+    <string>pe</string>
+   </property>
+   <property name="toolTip">
+    <string extracomment="市盈率">pe</string>
+   </property>
+   <property name="statusTip">
+    <string>市盈率</string>
    </property>
   </action>
   <action name="actionPB">
@@ -145,7 +160,10 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>PB</string>
+    <string>pb</string>
+   </property>
+   <property name="statusTip">
+    <string>市净率</string>
    </property>
   </action>
   <action name="actionTime">
@@ -169,6 +187,9 @@
    <property name="text">
     <string>totals</string>
    </property>
+   <property name="statusTip">
+    <string>总股本（万）</string>
+   </property>
   </action>
   <action name="actionPrice">
    <property name="checkable">
@@ -185,6 +206,9 @@
    <property name="text">
     <string>industry</string>
    </property>
+   <property name="statusTip">
+    <string>细分行业</string>
+   </property>
   </action>
   <action name="actionarea">
    <property name="checkable">
@@ -192,6 +216,9 @@
    </property>
    <property name="text">
     <string>area</string>
+   </property>
+   <property name="statusTip">
+    <string>地区</string>
    </property>
   </action>
   <action name="actionoutstanding">
@@ -201,6 +228,9 @@
    <property name="text">
     <string>outstanding</string>
    </property>
+   <property name="statusTip">
+    <string>流通股本</string>
+   </property>
   </action>
   <action name="actiontotalAssets">
    <property name="checkable">
@@ -208,6 +238,9 @@
    </property>
    <property name="text">
     <string>totalAssets</string>
+   </property>
+   <property name="statusTip">
+    <string>总资产（万）</string>
    </property>
   </action>
   <action name="actionliquidAssets">
@@ -217,6 +250,9 @@
    <property name="text">
     <string>liquidAssets</string>
    </property>
+   <property name="statusTip">
+    <string>流动资产</string>
+   </property>
   </action>
   <action name="actionfixedAssets">
    <property name="checkable">
@@ -224,6 +260,9 @@
    </property>
    <property name="text">
     <string>fixedAssets</string>
+   </property>
+   <property name="statusTip">
+    <string>固定资产</string>
    </property>
   </action>
   <action name="actionreserved">
@@ -233,6 +272,9 @@
    <property name="text">
     <string>reserved</string>
    </property>
+   <property name="statusTip">
+    <string>公积金</string>
+   </property>
   </action>
   <action name="actionreservedPerShare">
    <property name="checkable">
@@ -240,6 +282,9 @@
    </property>
    <property name="text">
     <string>reservedPerShare</string>
+   </property>
+   <property name="statusTip">
+    <string>每股公积金</string>
    </property>
   </action>
   <action name="actionesp">
@@ -257,6 +302,9 @@
    <property name="text">
     <string>timeToMarket</string>
    </property>
+   <property name="statusTip">
+    <string>上市日期</string>
+   </property>
   </action>
   <action name="actionundp">
    <property name="checkable">
@@ -264,6 +312,9 @@
    </property>
    <property name="text">
     <string>undp</string>
+   </property>
+   <property name="statusTip">
+    <string>未分配利润</string>
    </property>
   </action>
   <action name="actionperundp">
@@ -273,6 +324,9 @@
    <property name="text">
     <string>perundp</string>
    </property>
+   <property name="statusTip">
+    <string>每股未分配</string>
+   </property>
   </action>
   <action name="actionrev">
    <property name="checkable">
@@ -280,6 +334,9 @@
    </property>
    <property name="text">
     <string>rev</string>
+   </property>
+   <property name="statusTip">
+    <string>收入同比（%）</string>
    </property>
   </action>
   <action name="actionprofit">
@@ -289,6 +346,9 @@
    <property name="text">
     <string>profit</string>
    </property>
+   <property name="statusTip">
+    <string>利润同比(%)</string>
+   </property>
   </action>
   <action name="actiongpr">
    <property name="checkable">
@@ -296,6 +356,9 @@
    </property>
    <property name="text">
     <string>gpr</string>
+   </property>
+   <property name="statusTip">
+    <string>毛利率(%)</string>
    </property>
   </action>
   <action name="actionnpr">
@@ -305,6 +368,9 @@
    <property name="text">
     <string>npr</string>
    </property>
+   <property name="statusTip">
+    <string>净利润率(%)</string>
+   </property>
   </action>
   <action name="actionholders">
    <property name="checkable">
@@ -312,6 +378,53 @@
    </property>
    <property name="text">
     <string>holders</string>
+   </property>
+   <property name="statusTip">
+    <string>股东人数</string>
+   </property>
+  </action>
+  <action name="actioneps">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>esp</string>
+   </property>
+   <property name="statusTip">
+    <string>每股收益</string>
+   </property>
+  </action>
+  <action name="actioncode">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>code</string>
+   </property>
+   <property name="statusTip">
+    <string>股票代码</string>
+   </property>
+  </action>
+  <action name="actionname">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>name</string>
+   </property>
+   <property name="statusTip">
+    <string>股票名称</string>
+   </property>
+  </action>
+  <action name="actionbvps">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>bvps</string>
+   </property>
+   <property name="statusTip">
+    <string>每股净资</string>
    </property>
   </action>
  </widget>

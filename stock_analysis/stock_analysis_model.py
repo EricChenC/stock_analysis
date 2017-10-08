@@ -11,7 +11,6 @@ class StockAnalysisModel(object):
 
         all_pe_list = list(all_stock_list['pe'])
         all_name_list = list(all_stock_list['name'])
-        all_bvps_list = list(all_stock_list['bvps'])
         all_totalAssets_list = list(all_stock_list['totalAssets'])
        
         self.pe_list = []
